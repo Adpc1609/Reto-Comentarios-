@@ -34,13 +34,14 @@ db.collection("users").onSnapshot((querySnapshot) => {
         ${doc.data().mensaje}
         </div>
         </div>
-        <button onclick="eliminar()">eliminar</button>
+        <button onclick="eliminar('${doc.id}')">eliminar</button>
         `
     });
 });
 
-function eliminar(){
-db.collection("cities").doc("DC").delete().then(function() {
+/*-----------------------------Eliminar----------------*/
+function eliminar(id){
+db.collection("users").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
 }).catch(function(error) {
     console.error("Error removing document: ", error);
