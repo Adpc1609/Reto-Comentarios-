@@ -4,7 +4,7 @@ firebase.initializeApp({
     projectId: "reto-comentario"
   });
   
-  // Initialize Cloud Firestore through Firebase
+/*-------Initialize Cloud Firestore through Firebase-------*/
 let db = firebase.firestore();
 
 function comentar(){
@@ -22,7 +22,8 @@ let comment = document.getElementById('comment').value;
 });
 }
 
-//leer Documentos 
+/*-------------------------leer Documentos---------------*/ 
+
 let cardTexto = document.getElementById("card");
 db.collection("users").onSnapshot((querySnapshot) => {
  cardTexto.innerHTML = "";
@@ -34,7 +35,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
         ${doc.data().mensaje}
         </div>
         </div>
-        <button onclick="eliminar('${doc.id}')">eliminar</button>
+        <button class="btn btn-warning "onclick="eliminar('${doc.id}')">eliminar</button>
         `
     });
 });
@@ -47,3 +48,4 @@ db.collection("users").doc(id).delete().then(function() {
     console.error("Error removing document: ", error);
 });
 }
+
