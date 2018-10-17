@@ -17,16 +17,26 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-">
-                <label for="exampleFormControlTextarea1">Mensajes</label>
-                <textarea class="form-control" id="comment" rows="3" placeholder="añada su mensaje"></textarea>
+        <div class="row comentarios justify-content-center">
+            <div class="col-6">
+                <h1>Comentarios</h1>
+                <form action="" class="form_comentarios d-flex justify-content-end flex-wrap">
+                    <textarea name="" id="comment" placeholder="Comentario"></textarea>
+                    <button class="btn" type="button" onclick="comentar()">Comentar</button>
+                </form>
+
+                <div class="media">
+                    <img src="img/persona1.jpg" width="64" height="64" alt="">
+                    <div class="media-body" id="card">
+                        <p class="nombre">Jhon Doe <span>7:51pm, Hoy</span></p>
+                        <p class="comentario">
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="button" class="btn btn-warning" onclick="comentar()">Comentar</button>
-        <div id="card"></div>
     </div>
-   
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
